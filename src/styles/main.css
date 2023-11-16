@@ -1,64 +1,71 @@
+/* Estilização básica do corpo da página */
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #fc1e8a;
-  user-select: none;
+  background: #fc1e8a; /* Cor de fundo da página */
+  user-select: none; /* Impede a seleção de texto na página */
 }
 
+/* Estilização do contêiner principal */
 .container {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 30px; /* Espaçamento entre elementos filhos */
   background: linear-gradient(
     325deg,
     #03001e 0%,
     #7303c0 30%,
     #ec38bc 70%,
     #fdeff9 100%
-  );
-  padding: 40px 60px;
+  ); /* Gradiente de fundo */
+  padding: 40px 60px; /* Espaçamento interno */
 }
 
+/* Estilização do título */
 h2 {
   font-size: 3em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  color: #fff; /* Cor do texto */
+  text-transform: uppercase; /* Transforma o texto em maiúsculas */
+  letter-spacing: 0.1em; /* Espaçamento entre letras */
 }
 
+/* Estilização do botão de reset */
 .reset {
   padding: 15px 20px;
   width: 100%;
-  color: #000;
-  background-color: #fff;
-  border: none;
+  color: #000; /* Cor do texto */
+  background-color: #fff; /* Cor de fundo */
+  border: none; /* Remove a borda */
   font-size: 1.5em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  cursor: pointer;
+  cursor: pointer; /* Muda o cursor ao passar sobre o botão */
   font-weight: 600;
 }
 
+/* Estilização do botão de reset quando está focado */
 .reset:focus {
-  color: #ec38bc;
-  background-color: #262809;
+  color: #ec38bc; /* Cor do texto quando focado */
+  background-color: #262809; /* Cor de fundo quando focado */
 }
 
+/* Estilização do contêiner do jogo */
 .game {
   width: 430px;
   height: 430px;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 10px; /* Espaçamento entre as cartas */
   transform-style: preserve-3d;
   perspective: 500px;
 }
 
+/* Estilização das cartas do jogo */
 .item {
   position: relative;
   width: 100px;
@@ -66,29 +73,32 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
+  background-color: #fff; /* Cor de fundo das cartas */
 
-  font-size: 3em;
-  transform: rotateY(180deg);
-  transition: 0.25s;
+  font-size: 3em; /* Tamanho da fonte */
+  transform: rotateY(180deg); /* Inicialmente rotacionada para esconder o conteúdo */
+  transition: 0.25s; /* Transição suave durante 0.25 segundos */
 }
 
+/* Estilização da parte de trás das cartas */
 .item::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: #404040;
+  background: #404040; /* Cor de fundo da parte de trás das cartas */
   /* opacity: 0.85; */
-  transition: 0.25s;
+  transition: 0.25s; /* Transição suave durante 0.25 segundos */
   transform: rotateY(0deg);
-  backface-visibility: hidden;
+  backface-visibility: hidden; /* Oculta a parte de trás da carta durante a rotação */
 }
 
+/* Estilização das cartas abertas */
 .item.boxOpen {
-  transform: rotateY(0deg);
+  transform: rotateY(0deg); /* Rotaciona para exibir o conteúdo */
 }
 
+/* Estilização da parte de trás das cartas abertas e correspondentes */
 .boxOpen::after,
 .boxMatch::after {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg); /* Rotaciona para exibir a parte de trás */
 }
